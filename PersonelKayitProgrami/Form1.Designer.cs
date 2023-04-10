@@ -106,7 +106,7 @@
             this.radioButton2.Location = new System.Drawing.Point(155, 184);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(61, 20);
-            this.radioButton2.TabIndex = 4;
+            this.radioButton2.TabIndex = 101;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Bekar";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -119,7 +119,7 @@
             this.radioButton1.Location = new System.Drawing.Point(98, 184);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(47, 20);
-            this.radioButton1.TabIndex = 4;
+            this.radioButton1.TabIndex = 102;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Evli";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -132,7 +132,7 @@
             this.MskMaas.Mask = "0000";
             this.MskMaas.Name = "MskMaas";
             this.MskMaas.Size = new System.Drawing.Size(118, 22);
-            this.MskMaas.TabIndex = 3;
+            this.MskMaas.TabIndex = 4;
             this.MskMaas.ValidatingType = typeof(int);
             // 
             // CmbSehir
@@ -224,7 +224,7 @@
             this.CmbSehir.Location = new System.Drawing.Point(98, 117);
             this.CmbSehir.Name = "CmbSehir";
             this.CmbSehir.Size = new System.Drawing.Size(118, 24);
-            this.CmbSehir.TabIndex = 2;
+            this.CmbSehir.TabIndex = 3;
             // 
             // TxtMeslek
             // 
@@ -232,7 +232,7 @@
             this.TxtMeslek.Location = new System.Drawing.Point(98, 215);
             this.TxtMeslek.Name = "TxtMeslek";
             this.TxtMeslek.Size = new System.Drawing.Size(118, 22);
-            this.TxtMeslek.TabIndex = 1;
+            this.TxtMeslek.TabIndex = 5;
             // 
             // TxtSoyad
             // 
@@ -240,7 +240,7 @@
             this.TxtSoyad.Location = new System.Drawing.Point(98, 86);
             this.TxtSoyad.Name = "TxtSoyad";
             this.TxtSoyad.Size = new System.Drawing.Size(118, 22);
-            this.TxtSoyad.TabIndex = 1;
+            this.TxtSoyad.TabIndex = 2;
             // 
             // TxtAd
             // 
@@ -256,7 +256,7 @@
             this.Txtid.Location = new System.Drawing.Point(98, 22);
             this.Txtid.Name = "Txtid";
             this.Txtid.Size = new System.Drawing.Size(118, 22);
-            this.Txtid.TabIndex = 1;
+            this.Txtid.TabIndex = 100;
             // 
             // label7
             // 
@@ -397,6 +397,7 @@
             this.BtnKaydet.TabIndex = 4;
             this.BtnKaydet.Text = "Kaydet";
             this.BtnKaydet.UseVisualStyleBackColor = true;
+            this.BtnKaydet.Click += new System.EventHandler(this.BtnKaydet_Click);
             // 
             // BtnListele
             // 
@@ -407,7 +408,7 @@
             this.BtnListele.TabIndex = 3;
             this.BtnListele.Text = "Listele";
             this.BtnListele.UseVisualStyleBackColor = true;
-            this.BtnListele.Click += new System.EventHandler(this.button1_Click);
+            this.BtnListele.Click += new System.EventHandler(this.BtnListele_Click);
             // 
             // groupBox3
             // 

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using System.Data.SqlClient; //SQL komutlarını kullanabilmek için
 
 namespace PersonelKayitProgrami
 {
@@ -28,7 +28,7 @@ namespace PersonelKayitProgrami
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnListele_Click(object sender, EventArgs e)
         {
             //Listele butonuna tıklandığında sql'den tabloyu listeler,amaç değişiklik sonrası yenilikleri görmek
             this.tbl_PersonelTableAdapter.Fill(this.personelVeriTabaniDataSet.Tbl_Personel);
@@ -42,6 +42,21 @@ namespace PersonelKayitProgrami
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             label8.Text = "False";
+        }
+
+        private void BtnKaydet_Click(object sender, EventArgs e)
+        {
+            baglanti.Open();
+            SqlCommand komut = new SqlCommand("insert into Tbl_Personel (PerAd, PerSoyad, PerSehir, PerMaas, PerMeslek, PerDurum) values (@p1, @p2, @p3, @p4, @p5, @p6)", baglanti);
+            komut.Parameters.AddWithValue("@p1", TxtAd.Text);
+            komut.Parameters.AddWithValue("@p2", TxtSoyad.Text);
+            komut.Parameters.AddWithValue("@p3", CmbSehir.Text);
+            komut.Parameters.AddWithValue("@p4", MskMaas.Text);
+            komut.Parameters.AddWithValue("@p5", TxtMeslek.Text);
+            komut.Parameters.AddWithValue("@p6", label8.Text);
+            komut.ExecuteNonQuery();
+            baglanti.Close();
+            MessageBox.Show("Personel Başarıyla Eklendi!", " ", MessageBoxButtons.OK, MessageBoxIcon.Information) ;
         }
     }
 }
