@@ -52,8 +52,8 @@ namespace PersonelKayitProgrami
             if (radioButton1.Checked == true)
             {
                 label8.Text = "True";
-            }            
-            
+            }
+
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -87,7 +87,7 @@ namespace PersonelKayitProgrami
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e) //Burada herhangi bir hücreye tıklandığında olacakları yazdık.
         {
             int secilen = dataGridView1.SelectedCells[0].RowIndex; //Burada tıklanan hücrenin 0'ıncı sütununun satır indexini secilen adlı değişkene atadık.
-            
+
             Txtid.Text = dataGridView1.Rows[secilen].Cells[0].Value.ToString(); //seçilen satırın 0. hücresinde bulunan değeri Txtid'ye yazdırdık.
             TxtAd.Text = dataGridView1.Rows[secilen].Cells[1].Value.ToString();
             TxtSoyad.Text = dataGridView1.Rows[secilen].Cells[2].Value.ToString();
@@ -96,22 +96,29 @@ namespace PersonelKayitProgrami
             label8.Text = dataGridView1.Rows[secilen].Cells[5].Value.ToString();
             TxtMeslek.Text = dataGridView1.Rows[secilen].Cells[6].Value.ToString();
 
-
-
-
-
         }
 
         private void label8_TextChanged(object sender, EventArgs e) //Burada label8'in text'i değiştiği zaman yapılacakları yazdık.
         {
-            if (label8.Text== "True")
+            if (label8.Text == "True")
             {
                 radioButton1.Checked = true;
             }
-            if (label8.Text=="False")
+            if (label8.Text == "False")
             {
                 radioButton2.Checked = true;
             }
+
+        }
+
+        private void BtnSil_Click(object sender, EventArgs e)
+        {
+            baglanti.Open();
+            SqlCommand komutsil = new SqlCommand("Delete From Tbl_Personel Where Perid=@k1", baglanti);
+            komutsil.Parameters.AddWithValue("@k1", Txtid.Text);
+            komutsil.ExecuteNonQuery();
+            baglanti.Close();
+            MessageBox.Show("Kayıt Silindi!");
 
         }
     }
