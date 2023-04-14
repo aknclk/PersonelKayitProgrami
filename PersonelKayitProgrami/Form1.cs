@@ -38,7 +38,6 @@ namespace PersonelKayitProgrami
         {
             //Form açıldığında otomatik olarak sql'den tabloyu listeler
             this.tbl_PersonelTableAdapter.Fill(this.personelVeriTabaniDataSet.Tbl_Personel);
-
         }
 
         private void BtnListele_Click(object sender, EventArgs e)
@@ -53,7 +52,6 @@ namespace PersonelKayitProgrami
             {
                 label8.Text = "True";
             }
-
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -95,7 +93,6 @@ namespace PersonelKayitProgrami
             MskMaas.Text = dataGridView1.Rows[secilen].Cells[4].Value.ToString();
             label8.Text = dataGridView1.Rows[secilen].Cells[5].Value.ToString();
             TxtMeslek.Text = dataGridView1.Rows[secilen].Cells[6].Value.ToString();
-
         }
 
         private void label8_TextChanged(object sender, EventArgs e) //Burada label8'in text'i değiştiği zaman yapılacakları yazdık.
@@ -108,7 +105,6 @@ namespace PersonelKayitProgrami
             {
                 radioButton2.Checked = true;
             }
-
         }
 
         private void BtnSil_Click(object sender, EventArgs e)
@@ -119,7 +115,22 @@ namespace PersonelKayitProgrami
             komutsil.ExecuteNonQuery();
             baglanti.Close();
             MessageBox.Show("Kayıt Silindi!");
+        }
 
+        private void BtnGuncelle_Click(object sender, EventArgs e)
+        {
+            baglanti.Open();
+            SqlCommand güncelle = new SqlCommand("Update Tbl_Personel Set PerAd=@a1, PerSoyad=@a2, PerSehir=@a3, PerMaas=@a4, PerDurum=@a5, PerMeslek=@a6 where Perid=@a7", baglanti);
+            güncelle.Parameters.AddWithValue("@a1", TxtAd.Text);
+            güncelle.Parameters.AddWithValue("@a2", TxtSoyad.Text);
+            güncelle.Parameters.AddWithValue("@a3", CmbSehir.Text);
+            güncelle.Parameters.AddWithValue("@a4", MskMaas.Text);
+            güncelle.Parameters.AddWithValue("@a5", label8.Text);
+            güncelle.Parameters.AddWithValue("@a6", TxtMeslek.Text);
+            güncelle.Parameters.AddWithValue("@a7", Txtid.Text);
+            güncelle.ExecuteNonQuery();
+            baglanti.Close();
+            MessageBox.Show("Güncellendi!");
         }
     }
 }
