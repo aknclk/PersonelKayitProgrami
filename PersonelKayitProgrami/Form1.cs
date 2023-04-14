@@ -13,9 +13,22 @@ namespace PersonelKayitProgrami
 {
     public partial class Form1 : Form
     {
-        
+
         SqlConnection baglanti = new SqlConnection("Data Source=aknclk\\SQLEXPRESS;Initial Catalog=PersonelVeriTabani;Integrated Security=True");
-        
+
+        void temizle()
+        {
+            Txtid.Text = "";
+            TxtAd.Text = "";
+            TxtSoyad.Text = "";
+            TxtMeslek.Text = "";
+            CmbSehir.Text = "";
+            MskMaas.Text = "";
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            TxtAd.Focus();
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -56,7 +69,12 @@ namespace PersonelKayitProgrami
             komut.Parameters.AddWithValue("@p6", label8.Text);
             komut.ExecuteNonQuery();
             baglanti.Close();
-            MessageBox.Show("Personel Başarıyla Eklendi!", " ", MessageBoxButtons.OK, MessageBoxIcon.Information) ;
+            MessageBox.Show("Personel Başarıyla Eklendi!", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void BtnTemizle_Click(object sender, EventArgs e)
+        {
+            temizle();
         }
     }
 }
