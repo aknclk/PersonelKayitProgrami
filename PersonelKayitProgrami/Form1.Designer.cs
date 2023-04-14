@@ -337,6 +337,7 @@
             this.label8.TabIndex = 3;
             this.label8.Text = "label8";
             this.label8.Visible = false;
+            this.label8.TextChanged += new System.EventHandler(this.label8_TextChanged);
             // 
             // BtnGrafikler
             // 
@@ -440,6 +441,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(752, 154);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // peridDataGridViewTextBoxColumn
             // 
