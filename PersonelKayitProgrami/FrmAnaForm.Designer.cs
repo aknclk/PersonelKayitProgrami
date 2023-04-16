@@ -1,6 +1,6 @@
 ﻿namespace PersonelKayitProgrami
 {
-    partial class Form1
+    partial class FrmAnaForm
     {
         /// <summary>
         /// Required designer variable.

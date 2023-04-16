@@ -11,7 +11,7 @@ using System.Data.SqlClient; //SQL komutlarını kullanabilmek için
 
 namespace PersonelKayitProgrami
 {
-    public partial class Form1 : Form
+    public partial class FrmAnaForm : Form
     {
 
         SqlConnection baglanti = new SqlConnection("Data Source=aknclk\\SQLEXPRESS;Initial Catalog=PersonelVeriTabani;Integrated Security=True");
@@ -29,7 +29,7 @@ namespace PersonelKayitProgrami
             TxtAd.Focus();
         }
 
-        public Form1()
+        public FrmAnaForm()
         {
             InitializeComponent();
         }
