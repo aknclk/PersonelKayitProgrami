@@ -348,6 +348,7 @@
             this.BtnGrafikler.TabIndex = 9;
             this.BtnGrafikler.Text = "Grafikler";
             this.BtnGrafikler.UseVisualStyleBackColor = true;
+            this.BtnGrafikler.Click += new System.EventHandler(this.BtnGrafikler_Click);
             // 
             // BtnIstatistik
             // 
@@ -521,7 +522,7 @@
             // 
             this.tbl_PersonelTableAdapter.ClearBeforeFill = true;
             // 
-            // Form1
+            // FrmAnaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -532,7 +533,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
+            this.Name = "FrmAnaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personel Kayıt Programı";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -138,5 +138,11 @@ namespace PersonelKayitProgrami
             Frmistatistik fr = new Frmistatistik();
             fr.Show();
         }
+
+        private void BtnGrafikler_Click(object sender, EventArgs e)
+        {
+            FrmGrafik frgrafik = new FrmGrafik();
+            frgrafik.Show();
+        }
     }
 }
