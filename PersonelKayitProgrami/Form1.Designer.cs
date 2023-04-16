@@ -55,7 +55,6 @@
             this.BtnListele = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.peridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.perAdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.perSoyadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,13 +64,14 @@
             this.perMeslekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblPersonelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.personelVeriTabaniDataSet = new PersonelKayitProgrami.PersonelVeriTabaniDataSet();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tbl_PersonelTableAdapter = new PersonelKayitProgrami.PersonelVeriTabaniDataSetTableAdapters.Tbl_PersonelTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblPersonelBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personelVeriTabaniDataSet)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -358,6 +358,7 @@
             this.BtnIstatistik.TabIndex = 8;
             this.BtnIstatistik.Text = "İstatistik";
             this.BtnIstatistik.UseVisualStyleBackColor = true;
+            this.BtnIstatistik.Click += new System.EventHandler(this.BtnIstatistik_Click);
             // 
             // BtnTemizle
             // 
@@ -445,24 +446,6 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.BtnGrafikler);
-            this.groupBox2.Controls.Add(this.BtnIstatistik);
-            this.groupBox2.Controls.Add(this.BtnTemizle);
-            this.groupBox2.Controls.Add(this.BtnGuncelle);
-            this.groupBox2.Controls.Add(this.BtnSil);
-            this.groupBox2.Controls.Add(this.BtnKaydet);
-            this.groupBox2.Controls.Add(this.BtnListele);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox2.Location = new System.Drawing.Point(254, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(262, 253);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "İşlemler";
-            // 
             // peridDataGridViewTextBoxColumn
             // 
             this.peridDataGridViewTextBoxColumn.DataPropertyName = "Perid";
@@ -516,6 +499,24 @@
             this.personelVeriTabaniDataSet.DataSetName = "PersonelVeriTabaniDataSet";
             this.personelVeriTabaniDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.BtnGrafikler);
+            this.groupBox2.Controls.Add(this.BtnIstatistik);
+            this.groupBox2.Controls.Add(this.BtnTemizle);
+            this.groupBox2.Controls.Add(this.BtnGuncelle);
+            this.groupBox2.Controls.Add(this.BtnSil);
+            this.groupBox2.Controls.Add(this.BtnKaydet);
+            this.groupBox2.Controls.Add(this.BtnListele);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox2.Location = new System.Drawing.Point(254, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(262, 253);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "İşlemler";
+            // 
             // tbl_PersonelTableAdapter
             // 
             this.tbl_PersonelTableAdapter.ClearBeforeFill = true;
@@ -539,10 +540,10 @@
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblPersonelBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personelVeriTabaniDataSet)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }

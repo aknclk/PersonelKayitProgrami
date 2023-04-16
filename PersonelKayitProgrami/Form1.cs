@@ -132,5 +132,11 @@ namespace PersonelKayitProgrami
             baglanti.Close();
             MessageBox.Show("Güncellendi!");
         }
+
+        private void BtnIstatistik_Click(object sender, EventArgs e)
+        {
+            Frmistatistik fr = new Frmistatistik();
+            fr.Show();
+        }
     }
 }
