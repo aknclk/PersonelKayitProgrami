@@ -144,5 +144,11 @@ namespace PersonelKayitProgrami
             FrmGrafik frgrafik = new FrmGrafik();
             frgrafik.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmRaporlar frmrpr = new FrmRaporlar();
+            frmrpr.Show();
+        }
     }
 }
